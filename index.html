@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>René Cubaka Zahinda-Welcome to my webside </title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .header h2 {
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Main Content Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        
+        /* Left Column */
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        /* Right Column */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        /* Common Section Styling */
+        .section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            color: #1a237e;
+            border-bottom: 2px solid #1a237e;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Summary Section */
+        .summary {
+            line-height: 1.8;
+            color: #444;
+        }
+        
+        /* Timeline Items */
+        .timeline-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid #1a237e;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            font-weight: bold;
+            color: #1a237e;
+        }
+        
+        .timeline-date {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .timeline-subtitle {
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-description {
+            color: #666;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .skill-category {
+            margin-bottom: 1rem;
+        }
+        
+        .skill-category h4 {
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background: #e8eaf6;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #1a237e;
+        }
+        
+        /* Awards Section */
+        .award-item {
+            background: #f3f4f9;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #1a237e;
+        }
+        
+        .award-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .award-year {
+            font-weight: bold;
+            color: #1a237e;
+        }
+        
+        /* Language Section */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .language-item:last-child {
+            border-bottom: none;
+        }
+        
+        .language-name {
+            font-weight: bold;
+        }
+        
+        .language-level {
+            color: #666;
+        }
+        
+        /* Certification Note */
+        .certification {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        .certification h4 {
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .header {
+                background: #1a237e;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Hi, welcome to my website</h1>
+        <h2>Cubaka ZAHINDA René </h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>📍</span>
+                <span>Bukavu, South Kivu, DR Congo</span>
+            </div>
+            <div class="contact-item">
+                <span>📱</span>
+                <span>+233 (0) 50 543 1410</span>
+            </div>
+	    <div class="contact-item">
+                <span>📱</span>
+                <span>+243 (0) 992 225 493</span>
+            </div>
+
+            <div class="contact-item">
+                <span>✉️</span>
+                <span>cubaka@aims.edu.gh</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="left-column">
+            <!-- Summary Section -->
+            <section class="section">
+                <h2 class="section-title">Summary</h2>
+                <div class="summary">
+                    <p>Born November 15th, in the South-Kivu Region in the Democratic Republic of the Congo. My academic expertise lies in solving real-life problems using mathematical tools. I enjoy research in both applied and pure mathematics and have worked in both during my BSc and master's studies.</p>
+                    <p>As a junior lecturer, I am committed to helping my students who do not understand mathematical concepts but also love them, with an emphasis on practical applications and research-oriented approaches.</p>
+                    <p>I hold a master's degree from the African Institute for Mathematical Sciences (AIMS Ghana), and my goal is to be not only a lecturer, but a lecturer who shows the way to students and leads them to loving mathematics.</p>
+                    <p>My goal is to do a PhD in mathematics because it will help me to solve real-life problems using mathematical tools.</p>
+                </div>
+            </section>
+            
+            <!-- Education Section -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">African Institute for Mathematical Sciences</div>
+                        <div class="timeline-date">Sep 2024 - June 2025</div>
+                    </div>
+                    <div class="timeline-subtitle">Master in Mathematical Sciences, Ghana</div>
+                    <div class="timeline-description">Graduated with distinction</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Institut Supérieur Pedagogique de Kaziba</div>
+                        <div class="timeline-date">2021 - 2023</div>
+                    </div>
+                    <div class="timeline-subtitle">Graduate degree (Bac+5) in Mathematics for education, DR Congo</div>
+                    <div class="timeline-description">Graduated with Great Distinction</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Institut Supérieur Pedagogique de Kaziba</div>
+                        <div class="timeline-date">2018 - 2021</div>
+                    </div>
+                    <div class="timeline-subtitle">Undergraduate degree (Bac+3) in Mathematics and Physics for education, DR Congo</div>
+                    <div class="timeline-description">Graduated with Distinction</div>
+                </div>
+            </section>
+            
+            <!-- Research Section -->
+            <section class="section">
+                <h2 class="section-title">Research</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Master Essay</div>
+                        <div class="timeline-date">2025</div>
+                    </div>
+                    <div class="timeline-subtitle">The length of a group element and the Cayley graph of a group</div>
+                    <div class="timeline-description">
+                        <strong>Supervisor:</strong> Prof. Dr. Peter Webb, University of Minnesota, USA<br>
+                        <strong>Institution:</strong> African Institute for Mathematical Sciences (AIMS) Ghana
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Graduate Thesis (Bac+5)</div>
+                        <div class="timeline-date">2023</div>
+                    </div>
+                    <div class="timeline-subtitle">Prediction of Hospital Length of Stay in Gynecology based on Machine Learning: Case of some hospitals in South Kivu</div>
+                    <div class="timeline-description">
+                        <strong>Supervisor:</strong> Prof. Dr. ZIHINDULA MUSHENGEZI Elie<br>
+                        <strong>Institution:</strong> Institut Supérieur Pedagogique de Kaziba, South-Kivu, DR Congo
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Undergraduate Thesis (Bac+3)</div>
+                        <div class="timeline-date">2021</div>
+                    </div>
+                    <div class="timeline-subtitle">Mathematical modeling of the population growth</div>
+                    <div class="timeline-description">
+                        <strong>Supervisor:</strong> Zirhumanana BALIKE Dieudonné<br>
+                        <strong>Institution:</strong> Institut Supérieur Pedagogique de Kaziba, South-Kivu, DR Congo
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Teaching Experience -->
+            <section class="section">
+                <h2 class="section-title">Teaching Experience and Positions</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Research and Teaching Assistant (Junior Lecturer)</div>
+                        <div class="timeline-date">Jan 2024 - Present</div>
+                    </div>
+                    <div class="timeline-subtitle">Institut Supérieur Pedagogique de Kaziba & Institut Supérieur de Développement Rural de Kaziba, South-Kivu, DR Congo</div>
+                    <div class="timeline-description">
+                        Courses taught: Affine geometry, Linear Algebra, Galois theory, Ordinary Differential Equations, Data analysis
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Chief of Staff of the General Director</div>
+                        <div class="timeline-date">Jan 2024 - Present</div>
+                    </div>
+                    <div class="timeline-subtitle">ISP Kaziba, South-Kivu, DR Congo</div>
+                    <div class="timeline-description">
+                        Managing the Director's office, coordinating the executive agenda, and overseeing strategic initiatives
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Teacher of Mathematics and Physics</div>
+                        <div class="timeline-date">2019 - 2024</div>
+                    </div>
+                    <div class="timeline-subtitle">Secondary schools, South-Kivu, DR Congo</div>
+                </div>
+            </section>
+        </div>
+        
+        <div class="right-column">
+            <!-- Skills Section -->
+            <section class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">R</span>
+                            <span class="skill-tag">GAP</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Software</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Photoshop</span>
+                            <span class="skill-tag">Excel</span>
+                            <span class="skill-tag">Word</span>
+                            <span class="skill-tag">PowerPoint</span>
+                            <span class="skill-tag">LaTeX</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Summer Schools & Workshops -->
+            <section class="section">
+                <h2 class="section-title">Summer Schools & Workshops</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">1st AIMS School on The Theory of Quantum Learning Algorithms</div>
+                        <div class="timeline-date">Oct 2025</div>
+                    </div>
+                    <div class="timeline-description">
+                        African Institute for Mathematical Sciences AIMS South Africa<br>
+                        Topics: Quantum learning theory, Clifford group, Haar integration, quantum tomography
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">1st AIMS Workshop on The Theory of Quantum Learning Algorithms</div>
+                        <div class="timeline-date">Oct 2025</div>
+                    </div>
+                    <div class="timeline-description">
+                        African Institute for Mathematical Sciences AIMS South Africa<br>
+                        Workshop presentations and open problems discussions
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div class="timeline-title">Ecole Mathématique Africaine (EMA)</div>
+                        <div class="timeline-date">Jul 2024</div>
+                    </div>
+                    <div class="timeline-description">
+                        Université de Lomé<br>
+                        Topic: Mathematical approach to problems and industrial problems
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Awards -->
+            <section class="section">
+                <h2 class="section-title">Awards</h2>
+                
+                <div class="award-item">
+                    <div class="award-year">2025</div>
+                    <div class="award-description">
+                        <strong>F.A.K. Allotey Meritorious Award</strong><br>
+                        AIMS Ghana - For achieving distinction in coursework and thesis (above 85%)
+                    </div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-year">2024</div>
+                    <div class="award-description">
+                        <strong>ISP Kaziba Excellence Prize</strong><br>
+                        Overall best student of the university
+                    </div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-year">2019</div>
+                    <div class="award-description">
+                        <strong>ISP Kaziba Excellence Prize</strong><br>
+                        Overall best student of the university
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Languages -->
+            <section class="section">
+                <h2 class="section-title">Languages</h2>
+                <div class="language-item">
+                    <span class="language-name">English</span>
+                    <span class="language-level">Intermediate</span>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">French</span>
+                    <span class="language-level">Fluent</span>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+  
+    <!-- Optional: Add PDF Download Link -->
+    <div style="text-align: center; margin-top: 2rem;">
+        <a href="CV_René (1).pdf" download style="
+            display: inline-block;
+            padding: 10px 20px;
+            background: #1a237e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        ">
+            📄 Download PDF Version
+        </a>
+    </div>
+
+    <script>
+        // Simple JavaScript for additional interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effect to timeline items
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems
